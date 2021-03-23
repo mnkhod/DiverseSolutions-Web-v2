@@ -9,7 +9,7 @@ function Wave() {
 
   return (
     <WaveStyled>
-      {/* <iframe src="wave.html"></iframe> */}
+       <iframe src="wave.html"></iframe>
       <TextAni />
       <div className="effect">
         <a className="hoverEffect" href="#бидний-тухай">
