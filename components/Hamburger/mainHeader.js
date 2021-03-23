@@ -79,7 +79,14 @@ const MainHeader = () => {
       </div>
       <div className="mobile-header">
         <div className="inner-mobile-header">
-          <img className="logo" src="DiverseLogo.png" />
+          <div className="mobile-logo">
+            <img className="logo" src="DiverseLogo.png" />
+            <div className="mobile-logoText">
+              <p>Diverse</p>
+              <p>Solutions</p>
+            </div>
+          </div>
+
           <img
             className="hamburger"
             onClick={() => (nav.current.style.transform = "translateX(0)")}
@@ -324,9 +331,35 @@ const HeaderStyled = styled.div`
       display: block;
     }
 
-    .logo {
-      width: 2.5rem;
-      left: 0;
+    .mobile-logo {
+      position: relative;
+      left: 15%;
+      margin: auto 0px;
+      text-align: start;
+      display: flex;
+      img {
+        cursor: pointer;
+        width: 2.5rem;
+        object-fit: contain;
+        margin-right: 1rem;
+        background: none !important;
+      }
+      .mobile-logoText {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 50px !important;
+        position: absolute;
+        left: 0;
+        top: -1rem;
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 2.5vh;
+          font-family: Vezla;
+          font-weight: bold;
+        }
+      }
     }
   }
 `;

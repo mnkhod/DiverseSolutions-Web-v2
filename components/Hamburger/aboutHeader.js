@@ -61,7 +61,13 @@ const AboutHeader = () => {
       </div>
       <div className={"mobile-header"}>
         <div className="inner-mobile-header">
-          <img className="logo" src="DiverseLogo.png" />
+          <div className="mobile-logo">
+            <img className="logo" src="DiverseLogo.png" />
+            <div className="mobile-logoText">
+              <p>Diverse</p>
+              <p>Solutions</p>
+            </div>
+          </div>
           <img
             className="hamburger"
             onClick={() => (nav.current.style.transform = "translateX(0)")}
@@ -98,8 +104,7 @@ const HeaderStyled = styled.div`
   }
 
   .lang {
-    position: absolute;
-    right: 1rem;
+    position: relative;
     padding: 5px;
     top: 0.2rem;
     button {
@@ -167,14 +172,14 @@ const HeaderStyled = styled.div`
     justify-content: center;
   }
   .inner-desktop-header {
-    width: 80%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
   }
   .logo {
     position: relative;
-    left: -3rem;
     margin: auto 0px;
+    flex-grow: 1;
     text-align: start;
     display: flex;
     img {
@@ -184,7 +189,6 @@ const HeaderStyled = styled.div`
       margin-right: 1rem;
     }
     .logoText {
-      margin: auto;
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
@@ -306,9 +310,33 @@ const HeaderStyled = styled.div`
       display: block;
     }
 
-    .logo {
+    .mobile-logo {
       width: 2.5rem;
+      position: relative;
       left: 0;
+      margin: auto 0px;
+      text-align: start;
+      display: flex;
+      img {
+        cursor: pointer;
+        width: 2.5rem;
+        object-fit: contain;
+        margin-right: 1rem;
+        background: none !important;
+      }
+      .mobile-logoText {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 50px !important;
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 2.5vh;
+          font-family: Vezla;
+          font-weight: bold;
+        }
+      }
     }
   }
 `;

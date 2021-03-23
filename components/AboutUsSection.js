@@ -71,7 +71,7 @@ const AboutUsSectionStyled = styled.div`
     height: 3rem;
     position: fixed;
     bottom: 5%;
-    left: 5%;
+    right: 5%;
     z-index: 1000000;
     border: 1px solid #fff;
     border-radius: 50%;
