@@ -74,7 +74,7 @@ function OurWorkSection() {
                 <p>
                   <a
                     className="web-link"
-                    href="http://www.newhorizons.mn/mn/"
+                    href="https://bit.ly/2PkzFQz"
                     target="_blank"
                   >
                     WEB APP
