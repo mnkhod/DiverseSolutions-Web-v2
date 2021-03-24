@@ -19,7 +19,7 @@ function PaboutConnectUsSection() {
   return (
     <PaboutConnectUsSectionStyled id="lets-talk">
       <span className="bg">
-        <img src="http://avo.smartinnovates.com/demo13/wp-content/uploads/sites/15/2020/10/pattern.png" />
+        <img src="pattern.png" />
       </span>
       <div className="connect-us">
         <div className="cs-left">

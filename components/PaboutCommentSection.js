@@ -66,11 +66,6 @@ function PaboutCommentSection() {
 
   return (
     <PaboutCommentSectionStyled id="харилцагч">
-      <img
-        src="http://innovationplans.com/idesign/avo2/avo-dark/img/slid/1.jpg"
-        alt="bgiamge"
-        className="bg-image"
-      />
       <div className="inner-container">
         <div className="comment-left">
           <div className="play-button">
