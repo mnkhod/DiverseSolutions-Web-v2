@@ -17,7 +17,7 @@ function AboutUsSection() {
 
   const { t, i18n } = useTranslation();
   return (
-    <AboutUsSectionStyled id="бидний-тухай">
+    <AboutUsSectionStyled id="aboutUs">
       <div className="left">
         <div className="image-wrapper-left">
           <img src="aboutUsLaptop.jpeg" alt="laptop" data-aos="fade-left" />

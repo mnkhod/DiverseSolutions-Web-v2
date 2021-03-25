@@ -18,7 +18,7 @@ function Footer() {
   const { t, i18n } = useTranslation();
 
   return (
-    <FooterStyled id="холбоо-барих">
+    <FooterStyled id="contact">
       {/* <span className="coloredbg"></span>
       <span className="coloredbg2"></span> */}
       <div className="left">
@@ -63,19 +63,24 @@ function Footer() {
           <span>{t(`contactRightTitleSpan`)}</span>
           {t(`contactRightTitle`)}
         </h3>
-        <div className="email-box-container">
+        {/* <div className="email-box-container">
           <p>{t(`contactRightDesc`)}</p>
           <form className="inner-box">
             <input type="email" placeholder={t(`contactRightInput`)} />
             <button onClick={selfie}>{t(`contactRightButton`)}</button>
           </form>
+        </div> */}
+        <div className="getInfo">
+          <p>{t(`contactRightDesc`)}</p>
+          <a
+            data-aos="flip-left"
+            data-aos-duration="2000"
+            href="mailto:enkhamgalan@dsolutions.tech"
+            target="_blank"
+          >
+            <span>{t(`aboutSendCommentButton`)}</span>
+          </a>
         </div>
-        {/*
-				<h3 className='half-styled'>
-                    <span></span>
-                    SOCIAL POSTS
-                </h3>
-				*/}
       </div>
       <span className="bottomColor"></span>
       <div className="bottom">
@@ -155,11 +160,53 @@ const FooterStyled = styled.div`
     .coloredbg {
       display: none;
     }
+    .right h3 {
+      margin-bottom: 100px !important;
+    }
+    .getInfo {
+      height: 30vh !important;
+      width: 100%;
+      position: relative;
+      /* margin: 0 !important; */
+      /* padding: 0 !important; */
+      p {
+        position: absolute;
+        top: 0;
+      }
+      a {
+        position: absolute;
+        bottom: 0 !important;
+        left: 0;
+        height: 5vh !important;
+        width: 100% !important;
+        text-align: center;
+        margin-right: 50%;
+        margin-bottom: 0 !important;
+        span {
+          z-index: 4;
+          font-size: 2vw !important;
+        }
+      }
+    }
   }
 
   @media (max-width: 768px) {
     width: 100vw !important;
     flex-direction: column;
+    .getInfo {
+      padding: 0 !important;
+      a {
+        padding: 2vh 2vh !important;
+        height: 6vh !important;
+        width: 35vh !important;
+        top: 50%;
+        span {
+          z-index: 4;
+          display: block;
+          font-size: 1.5vh !important;
+        }
+      }
+    }
     .bottomColor,
     .coloredbg2 {
       display: none;
@@ -228,19 +275,12 @@ const FooterStyled = styled.div`
       span {
       }
     }
-    .email-box-container {
-      width: 90% !important;
-      margin-bottom: 5vh !important;
-      input,
-      button {
-        padding: 2vh !important;
-        font-size: 2vh !important;
-      }
+
+    .right {
+      height: 35vh !important;
+      padding-top: 0 !important;
     }
-    input {
-      background: rgba(255, 255, 255, 0.1);
-      width: 70vh !important;
-    }
+
     .bottom {
       width: 100%;
       left: 0;
@@ -283,8 +323,8 @@ const FooterStyled = styled.div`
     height: 100%;
   }
   .left {
+    flex-basis: 50%;
     height: 60vh;
-    width: 50vw;
     padding: 100px 15px 90px 85px;
     background: #151921;
     h3 {
@@ -344,7 +384,7 @@ const FooterStyled = styled.div`
     }
   }
   .right {
-    width: 49.4vw;
+    flex-basis: 50%;
     height: 60vh;
     background: #0c0f16;
     padding: 100px 70px 90px 100px;
@@ -354,48 +394,63 @@ const FooterStyled = styled.div`
     h3 {
       margin: 0;
     }
-    .email-box-container {
-      margin: 15px 0 15px 0;
-
+    .getInfo {
+      flex-direction: column;
+      height: 100%;
+      position: relative;
       z-index: 1;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+
       p {
         padding-bottom: 20px;
         opacity: 0.5;
+        width: 100%;
+        text-align: start;
       }
-      .inner-box {
-        display: flex;
-        * {
-          border: none;
-        }
-        input {
-          padding: 1vw;
-          background: #14171e;
-          color: white;
-          width: 70%;
-          font-size: 1rem;
-          background: rgba(255, 255, 255, 0.01);
-          font-family: "Barlow Condensed", sans-serif;
-          border: 1px solid #1f2229;
-          border-right: none;
+      a {
+        width: 40vh;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        border: 0.15rem solid white;
+        padding: 1rem 2rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        transition: 0.5s;
+        z-index: 1;
+        span {
           z-index: 2;
-        }
-        button {
+          position: relative;
           font-size: 0.8rem;
-          width: 35%;
-          padding: 5px;
-          background: #ffffff05;
-          color: #75dab4;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          font-family: "Barlow Condensed", sans-serif;
-          z-index: 2;
-          border: 1px solid #1f2229;
-          cursor: pointer;
+          letter-spacing: 0.2rem;
+          font-weight: 500;
+          margin: 0;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          left: -10%;
+          top: -160%;
+          width: 120%;
+          height: 140%;
+          background: white;
+          transform: rotate(-4deg);
+          transition: 0.5s;
+        }
+        &:hover::after {
+          top: -20%;
+        }
+        &:hover {
+          color: #000 !important;
+          transition: 0.5s;
         }
       }
-    }
-
-    h3 {
     }
   }
   .half-styled {

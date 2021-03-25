@@ -30,7 +30,7 @@ function PaboutIntroSection() {
         {/* <h1>About us</h1> */}
         <img src="about7.jpeg" alt="bg" />
       </div>
-      <div className="intro-container" id="about2">
+      <div className="intro-container" id="us">
         <h2 className="textanimation1">{t(`aboutAboutUsTitle2`)}</h2>
         <p className="textAnimation2">{t(`aboutAboutUsDesc`)}</p>
       </div>

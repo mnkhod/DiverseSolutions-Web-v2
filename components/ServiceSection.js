@@ -8,7 +8,7 @@ function ServiceSection() {
   const { t, i18n } = useTranslation();
 
   return (
-    <ServiceSectionStyled id="үйлчилгээ">
+    <ServiceSectionStyled id="services">
       <div className="inner-container">
         <SectionHeading
           heading={t(`serviceTitle2`)}

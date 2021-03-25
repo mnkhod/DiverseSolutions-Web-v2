@@ -1,5 +1,4 @@
 import Head from "next/head";
-import MainHeader from "../components/Hamburger/mainHeader";
 import HomeSlidingSection from "../components/HomeSlidingSection";
 import AboutUsSection from "../components/AboutUsSection";
 import ServiceSection from "../components/ServiceSection";
@@ -16,7 +15,6 @@ export default function Home() {
     <>
       <Head>
         <title>Diverse Solutions</title>
-        <link rel="icon" href="/favicon.ico" />
         <script
           type="text/javascript"
           src="../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4"
@@ -41,7 +39,6 @@ export default function Home() {
           var background_particle_effect_line_color = "rgba(255,255,255,0.65)";
         </script>
       </Head>
-      <MainHeader />
       <HomeSlidingSection />
       <AboutUsSection />
       <ServiceSection />

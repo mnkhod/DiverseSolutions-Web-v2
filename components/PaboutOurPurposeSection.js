@@ -37,7 +37,7 @@ function PaboutOurPurposeSection() {
   }, []);
 
   return (
-    <PaboutOurPurposeSectionStyled id="оффис">
+    <PaboutOurPurposeSectionStyled id="ourVision">
       <div className="bg"></div>
       <div className="our-purpose">
         <div className="our-purpose-left">

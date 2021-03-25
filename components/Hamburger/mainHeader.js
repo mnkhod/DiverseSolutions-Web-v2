@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import i18n from "../i18n";
 import { useTranslation } from "react-i18next";
@@ -12,106 +13,182 @@ const changeLanguage = (ln) => {
 };
 
 const MainHeader = () => {
+  let router = useRouter();
+  let [currentPath, setCurrentPath] = useState("");
+  let [isPageChanged, setIsPageChanged] = useState(false);
+
   let nav = useRef(null);
-  console.log(nav);
-
-  // const [navbar, setNavbar] = useState(false);
-
-  // function changeBackground() {
-  //   if (window.scrollY >= 80) {
-  //     setNavbar(true);
-  //   } else {
-  //     setNavbar(false);
-  //   }
-  // }
-  // React.useEffect(() => {
-  //   window.addEventListener("scroll", changeBackground);
-  // });
-
   const { t } = useTranslation();
 
-  return (
-    <HeaderStyled>
-      <div className="desktop-header">
-        <div className="inner-desktop-header">
-          <div className="logo">
-            <img src="DiverseLogo.png" alt="logo" />
-            <div className="logoText">
-              <p>Diverse</p>
-              <p>Solutions</p>
+  if (router.pathname == "/") {
+    return (
+      <HeaderStyled>
+        <div className="desktop-header">
+          <div className="inner-desktop-header">
+            <div className="logo">
+              <img src="DiverseLogo.png" alt="logo" />
+              <div className="logoText">
+                <p>Diverse</p>
+                <p>Solutions</p>
+              </div>
             </div>
-          </div>
 
-          <ul className="nav-bar">
-            <li>
-              <a href="#Нүүр">{t(`head1`)}</a>
-            </li>
-            <li>
-              <a href="#бидний-тухай">{t(`head2`)}</a>
-            </li>
-            <li>
-              <a href="#үйлчилгээ">{t(`head3`)}</a>
-            </li>
-            <li>
-              <a href="#төслүүд">{t(`head4`)}</a>
-            </li>
-            {/* <li>
+            <ul className="nav-bar">
+              <li>
+                <Link href="/">
+                  <a>{t(`head1`)}</a>
+                </Link>
+              </li>
+              <li>
+                <a href="#aboutUs">{t(`head2`)}</a>
+              </li>
+              <li>
+                <a href="#services">{t(`head3`)}</a>
+              </li>
+              <li>
+                <a href="#projects">{t(`head4`)}</a>
+              </li>
+              {/* <li>
               <a href="#харилцагч">{t(`head5`)}</a>
             </li>
             <li>
               <a href="#мэдээлэл">{t(`head6`)}</a>
             </li> */}
-            <li>
-              <a href="#холбоо-барих">{t(`head7`)}</a>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>{t(`head8`)}</a>
-              </Link>
-            </li>
-          </ul>
+              <li>
+                <a href="#contact">{t(`head7`)}</a>
+              </li>
+              <li>
+                <Link href="/about">
+                  <a>{t(`head8`)}</a>
+                </Link>
+              </li>
+            </ul>
 
-          <div className="lang">
-            <button onClick={changeLanguage("mn")}>mn</button>
-            <button onClick={changeLanguage("en")}>en</button>
-          </div>
-        </div>
-      </div>
-      <div className="mobile-header">
-        <div className="inner-mobile-header">
-          <div className="mobile-logo">
-            <img className="logo" src="DiverseLogo.png" />
-            <div className="mobile-logoText">
-              <p>Diverse</p>
-              <p>Solutions</p>
+            <div className="lang">
+              <button onClick={changeLanguage("mn")}>mn</button>
+              <button onClick={changeLanguage("en")}>en</button>
             </div>
           </div>
-
-          <img
-            className="hamburger"
-            onClick={() => (nav.current.style.transform = "translateX(0)")}
-            src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
-          />
         </div>
+        <div className="mobile-header">
+          <div className="inner-mobile-header">
+            <div className="mobile-logo">
+              <img className="logo" src="DiverseLogo.png" />
+              <div className="mobile-logoText">
+                <p>Diverse</p>
+                <p>Solutions</p>
+              </div>
+            </div>
 
-        <nav ref={nav}>
-          <img
-            className="close"
-            onClick={() => (nav.current.style.transform = "translateX(100%)")}
-            src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
-          />
-          <div className="langMobile">
-            <button onClick={changeLanguage("mn")}>mn</button>
-            <button onClick={changeLanguage("en")}>en</button>
+            <img
+              className="hamburger"
+              onClick={() => (nav.current.style.transform = "translateX(0)")}
+              src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
+            />
           </div>
-          <a href="/">{t(`head1`)}</a>
-          <Link href="/about">
-            <a>{t(`head8`)}</a>
-          </Link>
-        </nav>
-      </div>
-    </HeaderStyled>
-  );
+
+          <nav ref={nav}>
+            <img
+              className="close"
+              onClick={() => (nav.current.style.transform = "translateX(100%)")}
+              src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
+            />
+            <div className="langMobile">
+              <button onClick={changeLanguage("mn")}>mn</button>
+              <button onClick={changeLanguage("en")}>en</button>
+            </div>
+            <Link href="/">
+              <a>{t(`head1`)}</a>
+            </Link>
+            <Link href="/about">
+              <a>{t(`head8`)}</a>
+            </Link>
+          </nav>
+        </div>
+      </HeaderStyled>
+    );
+  } else {
+    return (
+      <HeaderStyled>
+        <div className="desktop-header">
+          <div className="inner-desktop-header">
+            <div className="logo">
+              <img src="DiverseLogo.png" />
+              <div className="logoText">
+                <p>Diverse</p>
+                <p>Solutions</p>
+              </div>
+            </div>
+
+            <ul className="nav-bar">
+              <li>
+                <Link href="/">
+                  <a>{t(`head1`)}</a>
+                </Link>
+              </li>
+              <li>
+                <a href="#us">{t(`head2`)}</a>
+              </li>
+              {/* <li>
+              <a href="#хамт-олон">{t(`head3.2`)}</a>
+            </li> */}
+              <li>
+                <a href="#ourTeam">{t(`head4.2`)}</a>
+              </li>
+              <li>
+                <a href="#ourVision">{t(`head5.2`)}</a>
+              </li>
+              <li>
+                <a href="#contact">{t(`head7`)}</a>
+              </li>
+              <li>
+                <a href="#">{t(`head8`)}</a>
+              </li>
+            </ul>
+
+            <div className="lang">
+              <button onClick={changeLanguage("mn")}>mn</button>
+              <button onClick={changeLanguage("en")}>en</button>
+            </div>
+          </div>
+        </div>
+        <div className={"mobile-header"}>
+          <div className="inner-mobile-header">
+            <div className="mobile-logo">
+              <img className="logo" src="DiverseLogo.png" />
+              <div className="mobile-logoText">
+                <p>Diverse</p>
+                <p>Solutions</p>
+              </div>
+            </div>
+            <img
+              className="hamburger"
+              onClick={() => (nav.current.style.transform = "translateX(0)")}
+              src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
+            />
+          </div>
+          <nav ref={nav}>
+            <img
+              className="close"
+              onClick={() => (nav.current.style.transform = "translateX(100%)")}
+              src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
+            />
+            <div className="langMobile">
+              <button onClick={changeLanguage("mn")}>mn</button>
+              <button onClick={changeLanguage("en")}>en</button>
+            </div>
+            <Link href="/">
+              <a>{t(`head1`)}</a>
+            </Link>
+
+            <Link href="/about">
+              <a>{t(`head8`)}</a>
+            </Link>
+          </nav>
+        </div>
+      </HeaderStyled>
+    );
+  }
 };
 
 const HeaderStyled = styled.div`
@@ -124,10 +201,7 @@ const HeaderStyled = styled.div`
   }
 
   .lang {
-    position: absolute;
-    right: 1rem;
-    padding: 5px;
-    top: 0.2rem;
+    margin: auto 0;
     button {
       margin: 1rem 5px;
       background: transparent;
@@ -192,16 +266,13 @@ const HeaderStyled = styled.div`
     justify-content: center;
   }
   .inner-desktop-header {
-    width: 80%;
-    height: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
   }
   .logo {
     position: relative;
-    left: -3rem;
     margin: auto 0px;
-    height: 100%;
     text-align: start;
     display: flex;
     img {
@@ -211,11 +282,8 @@ const HeaderStyled = styled.div`
       margin-right: 1rem;
     }
     .logoText {
-      margin: auto;
-      margin-top: 1rem;
-      display: flex;
+      margin: auto 0;
       flex-direction: column;
-      height: 50px !important;
       p {
         margin: 0;
         padding: 0;
@@ -283,9 +351,31 @@ const HeaderStyled = styled.div`
   }
   .inner-mobile-header {
     width: 90%;
-    height: 100%;
     display: flex;
     justify-content: space-between;
+  }
+  .mobile-logo {
+    margin: auto 0px;
+    text-align: start;
+    display: none;
+    img {
+      cursor: pointer;
+      width: 2.5rem;
+      object-fit: contain;
+      margin-right: 1rem;
+    }
+    .mobile-logoText {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 2.2vh;
+        font-family: Vezla;
+        font-weight: bold;
+      }
+    }
   }
   nav {
     display: flex;
@@ -310,7 +400,7 @@ const HeaderStyled = styled.div`
     }
   }
 
-  @media (max-width: 964px) {
+  @media (max-width: 1023px) {
     z-index: 100;
     .active {
       display: none;
@@ -326,43 +416,16 @@ const HeaderStyled = styled.div`
       display: flex;
     }
 
+    .mobile-logo {
+      display: flex;
+    }
+
     .lang {
       display: none;
     }
 
     .langMobile {
       display: block;
-    }
-
-    .mobile-logo {
-      position: relative;
-      left: 15%;
-      margin: auto 0px;
-      text-align: start;
-      display: flex;
-      img {
-        cursor: pointer;
-        width: 2.5rem;
-        object-fit: contain;
-        margin-right: 1rem;
-        background: none !important;
-      }
-      .mobile-logoText {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        height: 50px !important;
-        position: absolute;
-        left: 0;
-        top: -1rem;
-        p {
-          margin: 0;
-          padding: 0;
-          font-size: 2.5vh;
-          font-family: Vezla;
-          font-weight: bold;
-        }
-      }
     }
   }
 `;

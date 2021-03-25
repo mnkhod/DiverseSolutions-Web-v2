@@ -80,7 +80,7 @@ function PaboutOurTeamSection() {
   ];
 
   return (
-    <PaboutOurTeamSectionStyled id="хамт-олон">
+    <PaboutOurTeamSectionStyled id="ourTeam">
       <span className="bg"></span>
       <div className="inner-our-team">
         <div className="our-team-left">

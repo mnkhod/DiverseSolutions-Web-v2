@@ -29,14 +29,14 @@ function PaboutConnectUsSection() {
             {t(`aboutSendCommentTitle2`)}
           </h2>
         </div>
-        <a
+        {/* <a
           data-aos="flip-left"
           data-aos-duration="2000"
           href="mailto:enkhamgalan@dsolutions.tech"
           target="_blank"
         >
           <p>{t(`aboutSendCommentButton`)}</p>
-        </a>
+        </a> */}
       </div>
     </PaboutConnectUsSectionStyled>
   );
@@ -69,7 +69,7 @@ const PaboutConnectUsSectionStyled = styled.div`
     justify-content: space-between;
     padding-top: 5rem;
     .cs-left {
-      width: 70%;
+      width: 100%;
       z-index: 3;
       /* padding-left: 30px; */
       p {

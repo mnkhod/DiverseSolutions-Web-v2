@@ -51,7 +51,7 @@ function OurWorkSection() {
   const { t, i18n } = useTranslation();
 
   return (
-    <OurWorskSectionStyled id="төслүүд">
+    <OurWorskSectionStyled id="projects">
       <div className="inner-container">
         <SectionHeading
           heading={t(`projectsTitle2`)}

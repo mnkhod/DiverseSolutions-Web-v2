@@ -5,7 +5,6 @@ import PaboutOurTeamSection from "../components/PaboutOurTeamSection.js";
 import PaboutOurPurposeSection from "../components/PaboutOurPurposeSection.js";
 // import PaboutOurClientsSection from "../components/PaboutOurClientsSection.js";
 import PaboutConnectUsSection from "../components/PaboutConnectUsSection.js";
-import AboutHeader from "../components/Hamburger/aboutHeader";
 
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper";
 SwiperCore.use([Navigation, Autoplay, Pagination]);
@@ -48,7 +47,6 @@ const commentData = [
 function About() {
   return (
     <AboutStyled>
-      <AboutHeader />
       <PaboutIntroSection />
       {/* <PaboutCommentSection /> */}
       <PaboutOurTeamSection />
