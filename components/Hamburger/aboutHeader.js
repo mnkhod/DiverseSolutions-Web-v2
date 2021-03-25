@@ -174,6 +174,7 @@ const HeaderStyled = styled.div`
   .inner-desktop-header {
     width: 95%;
     display: flex;
+    height: 100%;
     justify-content: space-between;
   }
   .logo {
@@ -182,6 +183,7 @@ const HeaderStyled = styled.div`
     flex-grow: 1;
     text-align: start;
     display: flex;
+    height: 100%;
     img {
       cursor: pointer;
       width: 2.5rem;
@@ -261,6 +263,7 @@ const HeaderStyled = styled.div`
   .inner-mobile-header {
     width: 90%;
     display: flex;
+    height: 100%;
     justify-content: space-between;
   }
   nav {

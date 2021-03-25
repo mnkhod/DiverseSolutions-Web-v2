@@ -193,6 +193,7 @@ const HeaderStyled = styled.div`
   }
   .inner-desktop-header {
     width: 80%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -200,6 +201,7 @@ const HeaderStyled = styled.div`
     position: relative;
     left: -3rem;
     margin: auto 0px;
+    height: 100%;
     text-align: start;
     display: flex;
     img {
@@ -281,6 +283,7 @@ const HeaderStyled = styled.div`
   }
   .inner-mobile-header {
     width: 90%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
   }
