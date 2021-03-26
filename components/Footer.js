@@ -22,7 +22,13 @@ function Footer() {
       {/* <span className="coloredbg"></span>
       <span className="coloredbg2"></span> */}
       <div className="left">
-        <img src="DiverseLogo.png" alt="" className="logo" />
+        <div className="logo">
+          <img src="DiverseLogo.png" alt="logo" />
+          <div className="logoText">
+            <p>Diverse</p>
+            <p>Solutions</p>
+          </div>
+        </div>
         <div className="company-location">
           <p>
             <span>{t(`contactLeftMail`)}</span>
@@ -195,6 +201,7 @@ const FooterStyled = styled.div`
     flex-direction: column;
     .getInfo {
       padding: 0 !important;
+      width: 80%;
       a {
         padding: 2vh 2vh !important;
         height: 6vh !important;
@@ -335,11 +342,29 @@ const FooterStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      margin-bottom: 1vw;
+    .logo {
+      position: relative;
+      margin: auto 0px;
+      margin-bottom: 1.5vw;
+      text-align: start;
+      display: flex;
+      img {
+        cursor: pointer;
+        width: 2.5rem;
+        object-fit: contain;
+        margin-right: 1rem;
+      }
+      .logoText {
+        margin: auto 0;
+        flex-direction: column;
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 1rem;
+          font-family: Vezla;
+          font-weight: bold;
+        }
+      }
     }
     .company-location {
       p {
@@ -404,6 +429,8 @@ const FooterStyled = styled.div`
       padding-top: 5rem;
 
       p {
+        position: absolute;
+        top: 10%;
         padding-bottom: 20px;
         opacity: 0.5;
         width: 100%;
@@ -413,7 +440,7 @@ const FooterStyled = styled.div`
         width: 40vh;
         position: absolute;
         left: 0;
-        bottom: 0;
+        top: 50%;
         text-align: center;
         color: #fff;
         text-decoration: none;
